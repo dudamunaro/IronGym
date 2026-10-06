@@ -161,6 +161,32 @@ h1 span {
   text-decoration: none;
 }
 
+.botao-cadastro-personal {
+  display: inline-flex;
+
+  min-height: 48px;
+
+  margin: 0 0 24px;
+  padding: 0 20px;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background: var(--vermelho);
+
+  border-radius: 8px;
+
+  font-weight: 900;
+
+  text-decoration: none;
+}
+
+.botao-cadastro-personal:hover {
+  background: #b70924;
+}
+
 form {
   width: 100%;
 }
