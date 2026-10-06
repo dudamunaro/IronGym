@@ -1,0 +1,263 @@
+:root {
+  --texto: #ffffff;
+  --texto-suave: #d3d3d3;
+  --vermelho: #cf0c2a;
+  --linha: rgba(255, 255, 255, 0.1);
+  --painel: rgba(255, 255, 255, 0.06);
+  --sombra: 0 20px 48px rgba(0, 0, 0, 0.26);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(207, 12, 42, 0.14), transparent 30%),
+    linear-gradient(180deg, #050505, #111 48%, #070707);
+}
+
+a {
+  color: inherit;
+}
+
+.cabecalho-sobre,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 5vw, 70px);
+  background: rgba(5, 5, 5, 0.86);
+  border-bottom: 1px solid var(--linha);
+}
+
+.marca img {
+  width: 108px;
+  height: 78px;
+  object-fit: contain;
+}
+
+footer img {
+  width: 86px;
+  height: 72px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+nav a,
+.estrategia a {
+  text-decoration: none;
+  font-weight: 900;
+}
+
+nav a:hover {
+  color: var(--vermelho);
+}
+
+.destaque-sobre {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 76px 20px 38px;
+  text-align: center;
+}
+
+.destaque-sobre p,
+.cabecalho-secao p,
+.chamada {
+  margin: 0;
+  color: var(--vermelho);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.destaque-sobre h1 {
+  margin: 12px 0 16px;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.destaque-sobre span,
+.texto-principal p,
+.cartao-sobre p,
+.cartao-sobre li,
+.aplicativo-sobre p,
+.estrategia p,
+footer p {
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+.texto-principal {
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto 26px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+}
+
+.texto-principal p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.grade-institucional,
+.grade-tres,
+.aplicativo-sobre {
+  display: grid;
+  gap: 22px;
+  padding: 26px clamp(20px, 5vw, 70px);
+}
+
+.grade-institucional,
+.aplicativo-sobre {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grade-tres {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cartao-sobre {
+  padding: 28px;
+  background: var(--painel);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+}
+
+.cartao-sobre h2,
+.aplicativo-sobre h2,
+.estrategia h2 {
+  margin: 0 0 14px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+}
+
+.cartao-sobre ul,
+.cartao-sobre p {
+  margin-bottom: 0;
+}
+
+.cartao-sobre li {
+  margin-bottom: 10px;
+}
+
+.valores,
+.modalidades-sobre,
+.diferenciais {
+  padding: 44px clamp(20px, 5vw, 70px);
+}
+
+.cabecalho-secao {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.cabecalho-secao h2 {
+  margin: 10px 0 0;
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.lista-valores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.lista-valores span {
+  flex: 1 1 280px;
+  max-width: 380px;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  color: var(--texto-suave);
+  background: var(--painel);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.aplicativo-sobre {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.aplicativo-sobre h2 {
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.05;
+}
+
+.estrategia {
+  margin: 34px clamp(20px, 5vw, 70px) 58px;
+  padding: 34px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+}
+
+.estrategia h2 {
+  font-size: clamp(32px, 5vw, 52px);
+}
+
+.estrategia a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  margin-top: 12px;
+  padding: 0 24px;
+  background: var(--vermelho);
+  border-radius: 8px;
+}
+
+footer {
+  border-top: 1px solid var(--linha);
+  border-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .grade-institucional,
+  .grade-tres,
+  .aplicativo-sobre {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-valores span {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .cabecalho-sobre,
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+}

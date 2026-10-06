@@ -1,0 +1,289 @@
+:root {
+  --fundo: #050505;
+  --painel: rgba(28, 28, 30, 0.78);
+  --texto: #ffffff;
+  --texto-suave: #cfcfcf;
+  --vermelho: #cf0c2a;
+  --linha: rgba(255, 255, 255, 0.1);
+  --sombra: 0 22px 58px rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.88)),
+    url("../img/treino-destaque.png") center/cover;
+  filter: blur(3px) brightness(0.66) contrast(1.08);
+  transform: scale(1.04);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(207, 12, 42, 0.2), transparent 28%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.82));
+}
+
+a {
+  color: inherit;
+}
+
+.cabecalho-login {
+  min-height: 86px;
+  padding: 14px clamp(20px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(5, 5, 5, 0.86);
+  border-bottom: 1px solid var(--linha);
+  backdrop-filter: blur(12px);
+}
+
+.marca img {
+  display: block;
+  width: 108px;
+  height: 76px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+nav a {
+  color: #f4f4f4;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #cf0c2a;
+}
+
+.pagina-login {
+  min-height: calc(100vh - 86px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 520px);
+  align-items: center;
+  gap: clamp(28px, 6vw, 82px);
+  padding: 54px clamp(20px, 6vw, 90px);
+}
+
+.introducao-login {
+  max-width: 720px;
+}
+
+.chamada {
+  margin: 0;
+  color: #cf0c2a;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.introducao-login h1 {
+  margin: 12px 0 18px;
+  font-size: 76px;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.introducao-login > p:not(.chamada) {
+  max-width: 620px;
+  color: #eeeeee;
+  font-size: 21px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.beneficios-login {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.beneficios-login article {
+  min-height: 110px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+}
+
+.beneficios-login strong,
+.beneficios-login span {
+  display: block;
+}
+
+.beneficios-login strong {
+  color: #cf0c2a;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.beneficios-login span {
+  margin-top: 8px;
+  color: var(--texto-suave);
+  line-height: 1.35;
+}
+
+.cartao-login {
+  padding: 36px;
+  background: var(--painel);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(14px);
+}
+
+.cartao-login h2 {
+  margin: 8px 0 26px;
+  color: white;
+  font-size: 44px;
+  text-transform: uppercase;
+}
+
+form {
+  display: grid;
+  gap: 13px;
+}
+
+label {
+  color: #f4f4f4;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select {
+  color-scheme: dark;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #cf0c2a;
+  box-shadow: 0 0 0 3px rgba(207, 12, 42, 0.2);
+}
+
+.acoes-login {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+button,
+.acoes-login a {
+  min-height: 54px;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button {
+  border: 0;
+  background: var(--vermelho);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover,
+.acoes-login a:hover {
+  transform: translateY(-1px);
+}
+
+.acoes-login a {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.link-texto {
+  display: inline-block;
+  margin-top: 20px;
+  color: #cf0c2a;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.link-texto:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 920px) {
+  .pagina-login {
+    grid-template-columns: 1fr;
+    padding-top: 38px;
+  }
+
+  .beneficios-login {
+    grid-template-columns: 1fr;
+  }
+
+  .introducao-login h1 {
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cabecalho-login {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  .introducao-login h1 {
+    font-size: 42px;
+  }
+
+  .acoes-login {
+    flex-direction: column;
+  }
+}
