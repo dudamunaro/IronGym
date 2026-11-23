@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Profissional - Iron Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/area-profissional.css">
+</head>
+
+<body>
+  <header class="cabecalho-area">
+    <a class="marca" href="index.html" aria-label="Iron Gym - página inicial">
+      <img src="assets/img/ironlogo.png" alt="Iron Gym">
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#alunos">Alunos</a>
+      <a href="#avisos">Avisos</a>
+    </nav>
+    <a class="btn-aluno sair" href="login-profissional.html">Sair</a>
+  </header>
+
+  <main class="conteudo-area" id="inicio">
+    <section class="boas-vindas">
+      <div>
+        <p class="chamada">Iron Gym Team</p>
+        <h1>Olá, profissional!</h1>
+        <p>Consulte seus atendimentos e acompanhe seus alunos.</p>
+      </div>
+      <a class="botao-principal" href="#agenda">Ver agenda</a>
+    </section>
+
+    <aside class="aviso-demonstracao">
+      <strong>Painel demonstrativo</strong>
+      <span>Os alunos, horários e indicadores são exemplos. Este painel ainda não está conectado a contas ou banco de dados.</span>
+    </aside>
+
+    <section class="resumo" aria-label="Resumo profissional">
+      <article class="cartao resumo-indicador">
+        <div class="icone" aria-hidden="true">01</div>
+        <div>
+          <p class="rotulo">Alunos acompanhados</p>
+          <h2>18</h2>
+          <p class="texto-suave">Indicador demonstrativo</p>
+        </div>
+      </article>
+      <article class="cartao resumo-indicador">
+        <div class="icone" aria-hidden="true">02</div>
+        <div>
+          <p class="rotulo">Atendimentos hoje</p>
+          <h2>5</h2>
+          <p class="texto-suave">Próximo às 14h30</p>
+        </div>
+      </article>
+      <article class="cartao resumo-indicador">
+        <div class="icone" aria-hidden="true">03</div>
+        <div>
+          <p class="rotulo">Avaliações pendentes</p>
+          <h2>2</h2>
+          <p class="texto-suave">Confira sua agenda</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="grade-conteudo">
+      <section class="cartao secao-agenda" id="agenda">
+        <div class="titulo-secao">
+          <div>
+            <p class="rotulo">Hoje · quarta-feira</p>
+            <h2>Minha agenda</h2>
+          </div>
+          <span class="etiqueta">5 atendimentos</span>
+        </div>
+
+        <div class="lista-agenda">
+          <article class="atendimento">
+            <time>14h30</time>
+            <span class="linha-horario" aria-hidden="true"></span>
+            <div class="detalhes-atendimento">
+              <h3>Avaliação física</h3>
+              <p>Mariana Costa · avaliação inicial</p>
+            </div>
+            <span class="status status-proximo">Próximo</span>
+          </article>
+          <article class="atendimento">
+            <time>15h30</time>
+            <span class="linha-horario" aria-hidden="true"></span>
+            <div class="detalhes-atendimento">
+              <h3>Acompanhamento de treino</h3>
+              <p>Pedro Almeida · musculação</p>
+            </div>
+            <span class="status">Agendado</span>
+          </article>
+          <article class="atendimento">
+            <time>17h00</time>
+            <span class="linha-horario" aria-hidden="true"></span>
+            <div class="detalhes-atendimento">
+              <h3>Treino personalizado</h3>
+              <p>Beatriz Santos · treino funcional</p>
+            </div>
+            <span class="status">Agendado</span>
+          </article>
+          <article class="atendimento">
+            <time>18h00</time>
+            <span class="linha-horario" aria-hidden="true"></span>
+            <div class="detalhes-atendimento">
+              <h3>Reavaliação</h3>
+              <p>Lucas Ferreira · acompanhamento</p>
+            </div>
+            <span class="status">Agendado</span>
+          </article>
+        </div>
+        <p class="nota">Agenda de exemplo, sem atendimentos reais.</p>
+      </section>
+
+      <section class="cartao secao-avisos" id="avisos">
+        <div class="titulo-secao">
+          <div>
+            <p class="rotulo">Informações da academia</p>
+            <h2>Avisos da equipe</h2>
+          </div>
+        </div>
+        <article class="aviso">
+          <span class="ponto" aria-hidden="true"></span>
+          <div>
+            <h3>Reunião de equipe</h3>
+            <p>Reunião demonstrativa na sexta-feira, às 13h, na sala de avaliação.</p>
+          </div>
+          <span class="etiqueta">Equipe</span>
+        </article>
+        <article class="aviso">
+          <span class="ponto ponto-neutro" aria-hidden="true"></span>
+          <div>
+            <h3>Atualização dos equipamentos</h3>
+            <p>Consulte a equipe antes de usar equipamentos em manutenção.</p>
+          </div>
+          <span class="etiqueta etiqueta-neutra">Atenção</span>
+        </article>
+        <a class="link-suporte" href="index.html#faq-2">Acessar informações e suporte</a>
+      </section>
+    </div>
+
+    <section class="cartao secao-alunos" id="alunos">
+      <div class="titulo-secao">
+        <div>
+          <p class="rotulo">Acompanhamento</p>
+          <h2>Alunos recentes</h2>
+        </div>
+        <span class="texto-suave">Lista demonstrativa</span>
+      </div>
+      <div class="tabela-alunos" role="table" aria-label="Alunos vinculados ao profissional">
+        <div class="linha-aluno linha-cabecalho" role="row">
+          <span role="columnheader">
+            <input type="checkbox" id="selecionar-todos" aria-label="Selecionar todos">
+          </span>
+          <span role="columnheader">Aluno</span>
+          <span role="columnheader">Objetivo</span>
+          <span role="columnheader">Último acompanhamento</span>
+          <span role="columnheader">Situação</span>
+        </div>
+        <div id="lista-alunos"></div>
+      </div>
+      <div class="acoes-alunos">
+        <span id="contador-alunos" class="texto-suave"></span>
+        <button type="button" id="excluir-selecionados" class="botao-excluir">
+          Excluir vínculos selecionados
+        </button>
+      </div>
+      <p id="status-alunos" class="status-alunos" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="rodape-area">
+    <a href="index.html">Voltar para o site</a>
+    <span>Iron Gym · Área demonstrativa do profissional</span>
+  </footer>
+  <script src="assets/js/area-profissional.js"></script>
+</body>
+
+</html>

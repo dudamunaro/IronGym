@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Aluno - Iron Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/area-aluno.css">
+</head>
+
+<body>
+  <header class="cabecalho-area">
+    <a class="marca" href="index.html" aria-label="Iron Gym - página inicial">
+      <img src="assets/img/ironlogo.png" alt="Iron Gym">
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#treino">Meu treino</a>
+      <a href="#progresso">Progresso</a>
+      <a href="#avisos">Avisos</a>
+    </nav>
+    <a class="btn-aluno sair" href="login.html">Sair</a>
+  </header>
+
+  <main class="conteudo-area" id="inicio">
+    <section class="boas-vindas">
+      <div>
+        <p class="chamada">Iron Gym Club</p>
+        <h1>Olá, aluno!</h1>
+        <p>Acompanhe seu plano, seus treinos e sua evolução.</p>
+      </div>
+      <a class="botao-principal" href="index.html#pricing">Ver planos</a>
+    </section>
+
+    <aside class="aviso-demonstracao">
+      <strong>Área demonstrativa</strong>
+      <span>As informações exibidas são exemplos. Esta página ainda não está conectada a uma conta ou banco de dados.</span>
+    </aside>
+
+    <section class="resumo" aria-label="Resumo do aluno">
+      <article class="cartao resumo-plano">
+        <div class="icone" aria-hidden="true">01</div>
+        <div>
+          <p class="rotulo">Meu plano</p>
+          <h2>Iron Performance</h2>
+          <p class="texto-suave">Plano ativo · renovação demonstrativa</p>
+        </div>
+        <button class="link-detalhes" id="abrir-detalhes-plano" type="button" aria-haspopup="dialog" aria-controls="detalhes-plano">
+          Detalhes
+        </button>
+      </article>
+
+      <article class="cartao resumo-treino">
+        <div class="icone" aria-hidden="true">02</div>
+        <div>
+          <p class="rotulo">Próximo treino</p>
+          <h2>Treino A · Superior</h2>
+          <p class="texto-suave">Hoje · 18h00</p>
+        </div>
+        <button class="link-detalhes" id="abrir-detalhes-ficha" type="button" aria-haspopup="dialog" aria-controls="detalhes-ficha">
+          Ver ficha
+        </button>
+      </article>
+
+      <article class="cartao resumo-frequencia">
+        <div class="icone" aria-hidden="true">03</div>
+        <div>
+          <p class="rotulo">Frequência da semana</p>
+          <h2>3 <span>/ 5 treinos</span></h2>
+          <p class="texto-suave">Continue mantendo a consistência!</p>
+        </div>
+      </article>
+    </section>
+
+    <dialog class="dialog-plano" id="detalhes-plano" aria-labelledby="titulo-detalhes-plano">
+      <div class="dialog-cabecalho">
+        <div>
+          <p class="rotulo">Seu plano atual</p>
+          <h2 id="titulo-detalhes-plano">Iron Performance</h2>
+        </div>
+        <button class="fechar-dialogo" id="fechar-detalhes-plano" type="button" aria-label="Fechar detalhes do plano">
+          &times;
+        </button>
+      </div>
+      <p class="preco-plano">R$ 219,90 <span>/ mês</span></p>
+      <p class="texto-suave">Plano demonstrativo ativo. A área ainda não está conectada a uma conta.</p>
+      <ul class="beneficios-plano">
+        <li>Acesso a todas as modalidades</li>
+        <li>Treino personalizado</li>
+        <li>Avaliações recorrentes</li>
+      </ul>
+      <a class="botao-principal" href="index.html#pricing">Escolher outro plano</a>
+    </dialog>
+
+    <dialog class="dialog-plano" id="detalhes-ficha" aria-labelledby="titulo-detalhes-ficha">
+      <div class="dialog-cabecalho">
+        <div>
+          <p class="rotulo">Seu próximo treino · Hoje, 18h00</p>
+          <h2 id="titulo-detalhes-ficha">Treino A · Superior</h2>
+        </div>
+        <button class="fechar-dialogo" id="fechar-detalhes-ficha" type="button" aria-label="Fechar ficha de treino">
+          &times;
+        </button>
+      </div>
+      <p class="texto-suave">Membros superiores · 3 séries por exercício</p>
+      <div class="lista-exercicios">
+        <article class="exercicio">
+          <span class="numero">01</span>
+          <div><h3>Supino reto</h3><p>10–12 repetições</p></div>
+          <span class="grupo">Peito</span>
+        </article>
+        <article class="exercicio">
+          <span class="numero">02</span>
+          <div><h3>Puxada frontal</h3><p>10–12 repetições</p></div>
+          <span class="grupo">Costas</span>
+        </article>
+        <article class="exercicio">
+          <span class="numero">03</span>
+          <div><h3>Desenvolvimento com halteres</h3><p>10–12 repetições</p></div>
+          <span class="grupo">Ombros</span>
+        </article>
+        <article class="exercicio">
+          <span class="numero">04</span>
+          <div><h3>Tríceps na polia</h3><p>12–15 repetições</p></div>
+          <span class="grupo">Braços</span>
+        </article>
+      </div>
+      <p class="nota-treino">Ficha demonstrativa. Siga sempre as orientações do profissional responsável.</p>
+    </dialog>
+
+    <div class="grade-conteudo">
+      <section class="cartao secao-treino" id="treino">
+        <div class="titulo-secao">
+          <div>
+            <p class="rotulo">Sua rotina</p>
+            <h2>Ficha de treino</h2>
+          </div>
+          <span class="etiqueta">Treino A</span>
+        </div>
+
+        <p class="texto-suave">Treino de membros superiores · 3 séries por exercício</p>
+
+        <div class="lista-exercicios">
+          <article class="exercicio">
+            <span class="numero">01</span>
+            <div><h3>Supino reto</h3><p>10–12 repetições</p></div>
+            <span class="grupo">Peito</span>
+          </article>
+          <article class="exercicio">
+            <span class="numero">02</span>
+            <div><h3>Puxada frontal</h3><p>10–12 repetições</p></div>
+            <span class="grupo">Costas</span>
+          </article>
+          <article class="exercicio">
+            <span class="numero">03</span>
+            <div><h3>Desenvolvimento com halteres</h3><p>10–12 repetições</p></div>
+            <span class="grupo">Ombros</span>
+          </article>
+          <article class="exercicio">
+            <span class="numero">04</span>
+            <div><h3>Tríceps na polia</h3><p>12–15 repetições</p></div>
+            <span class="grupo">Braços</span>
+          </article>
+        </div>
+        <p class="nota-treino">A ficha acima é um exemplo. Siga sempre as orientações do profissional responsável.</p>
+      </section>
+
+      <div class="coluna-lateral">
+        <section class="cartao secao-progresso" id="progresso">
+          <div class="titulo-secao">
+            <div>
+              <p class="rotulo">Sua evolução</p>
+              <h2>Progresso semanal</h2>
+            </div>
+          </div>
+          <div class="progresso-item">
+            <div class="progresso-legenda"><span>Treinos realizados</span><strong>3 de 5</strong></div>
+            <div class="barra"><span style="width: 60%"></span></div>
+          </div>
+          <div class="progresso-item">
+            <div class="progresso-legenda"><span>Meta de frequência</span><strong>60%</strong></div>
+            <div class="barra"><span style="width: 60%"></span></div>
+          </div>
+          <p class="texto-suave">Os indicadores são ilustrativos e não representam dados pessoais.</p>
+        </section>
+
+        <section class="cartao secao-agenda">
+          <div class="titulo-secao">
+            <div>
+              <p class="rotulo">Organize sua semana</p>
+              <h2>Próximos treinos</h2>
+            </div>
+          </div>
+          <ul class="agenda">
+            <li><span class="dia">HOJE</span><span>Treino A · Superior</span><time>18h00</time></li>
+            <li><span class="dia">QUI</span><span>Treino B · Inferior</span><time>18h00</time></li>
+            <li><span class="dia">SÁB</span><span>Treino C · Corpo todo</span><time>10h00</time></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <section class="cartao secao-avisos" id="avisos">
+      <div class="titulo-secao">
+        <div>
+          <p class="rotulo">Fique por dentro</p>
+          <h2>Avisos da academia</h2>
+        </div>
+      </div>
+      <article class="aviso">
+        <span class="ponto" aria-hidden="true"></span>
+        <div>
+          <h3>Avaliação física</h3>
+          <p>Agende sua avaliação com a equipe para acompanhar seus objetivos e evolução.</p>
+        </div>
+        <span class="etiqueta">Importante</span>
+      </article>
+      <article class="aviso">
+        <span class="ponto" aria-hidden="true"></span>
+        <div>
+          <h3>Treine com segurança</h3>
+          <p>Em caso de dúvida sobre um exercício, procure um profissional da Iron Gym.</p>
+        </div>
+        <span class="etiqueta etiqueta-neutra">Dica</span>
+      </article>
+    </section>
+  </main>
+
+  <footer class="rodape-area">
+    <a href="index.html">Voltar para o site</a>
+    <span>Iron Gym · Área demonstrativa do aluno</span>
+  </footer>
+
+  <script>
+    var detalhesPlano = document.getElementById("detalhes-plano");
+    var botaoAbrirDetalhes = document.getElementById("abrir-detalhes-plano");
+    var botaoFecharDetalhes = document.getElementById("fechar-detalhes-plano");
+    var detalhesFicha = document.getElementById("detalhes-ficha");
+    var botaoAbrirFicha = document.getElementById("abrir-detalhes-ficha");
+    var botaoFecharFicha = document.getElementById("fechar-detalhes-ficha");
+
+    botaoAbrirDetalhes.addEventListener("click", function() {
+      detalhesPlano.showModal();
+    });
+
+    botaoFecharDetalhes.addEventListener("click", function() {
+      detalhesPlano.close();
+    });
+
+    botaoAbrirFicha.addEventListener("click", function() {
+      detalhesFicha.showModal();
+    });
+
+    botaoFecharFicha.addEventListener("click", function() {
+      detalhesFicha.close();
+    });
+  </script>
+</body>
+
+</html>

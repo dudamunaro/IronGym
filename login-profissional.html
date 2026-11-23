@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acesso profissional - Iron Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link href="assets/img/favicon.png" rel="icon">
+</head>
+
+<body>
+  <header class="cabecalho-login">
+    <a href="index.html" class="marca">
+      <img src="assets/img/ironlogo.png" alt="Iron Gym">
+    </a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#modalidades">Modalidades</a>
+      <a href="index.html#team">Time</a>
+      <a href="index.html#pricing">Planos</a>
+      <a href="index.html#faq-2">FAQ</a>
+    </nav>
+    <a class="btn-getstarted" href="cadastro.html">Matricular</a>
+    <a class="btn-aluno" href="login.html">Aluno</a>
+    <a class="btn-aluno" href="CadastroPersonal.html">Trabalhe conosco</a>
+  </header>
+
+  <main class="pagina-login">
+    <section class="introducao-login">
+      <p class="chamada">Iron Gym Team</p>
+      <h2 class="titulo">Área do profissional</h2>
+      <p>Acompanhe sua agenda, seus alunos e os avisos da equipe Iron Gym.</p>
+
+      <div class="beneficios-login">
+        <article>
+          <strong>Agenda</strong>
+          <span>Organize seus atendimentos</span>
+        </article>
+        <article>
+          <strong>Alunos</strong>
+          <span>Consulte acompanhamentos</span>
+        </article>
+        <article>
+          <strong>Equipe</strong>
+          <span>Fique por dentro dos avisos</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cartao-login">
+      <p class="chamada">Acesso profissional</p>
+      <h2>Entrar</h2>
+      <p class="aviso-login">Acesso demonstrativo: este formulário não verifica nem armazena credenciais.</p>
+
+      <form id="form-login-profissional" action="#" method="post">
+        <label for="email-profissional">E-mail</label>
+        <input type="email" id="email-profissional" name="email" autocomplete="username" required>
+        <span id="erro-email-profissional" class="mensagem-login" aria-live="polite"></span>
+
+        <label for="senha-profissional">Senha</label>
+        <input type="password" id="senha-profissional" name="senha" autocomplete="current-password" minlength="6" required>
+        <span id="erro-senha-profissional" class="mensagem-login" aria-live="polite"></span>
+
+        <div class="acoes-login">
+          <button type="submit">Entrar na demonstração</button>
+          <a href="index.html">Cancelar</a>
+        </div>
+      </form>
+
+      <a href="CadastroPersonal.html" class="link-texto">Ainda não faz parte da equipe?</a>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("form-login-profissional").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var email = document.getElementById("email-profissional");
+      var senha = document.getElementById("senha-profissional");
+      var erroEmail = document.getElementById("erro-email-profissional");
+      var erroSenha = document.getElementById("erro-senha-profissional");
+      var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim());
+
+      email.classList.remove("invalido");
+      senha.classList.remove("invalido");
+      erroEmail.textContent = "";
+      erroSenha.textContent = "";
+
+      if (!emailValido) {
+        email.classList.add("invalido");
+        erroEmail.textContent = "Informe um e-mail válido.";
+        email.focus();
+        return;
+      }
+
+      if (senha.value.length < 6) {
+        senha.classList.add("invalido");
+        erroSenha.textContent = "A senha deve ter pelo menos 6 caracteres.";
+        senha.focus();
+        return;
+      }
+
+      window.location.href = "area-profissional.html";
+    });
+  </script>
+</body>
+
+</html>

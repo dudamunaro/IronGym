@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assinar plano - Iron Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/assinar.css">
+</head>
+
+<body>
+  <header class="cabecalho">
+    <a class="marca" href="index.html" aria-label="Voltar para a página inicial da Iron Gym">
+      <img src="assets/img/ironlogo.png" alt="Iron Gym">
+    </a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#modalidades">Modalidades</a>
+      <a href="index.html#team">Time</a>
+      <a href="index.html#pricing">Planos</a>
+      <a href="index.html#faq-2">FAQ</a>
+    </nav>
+    <a class="btn-getstarted" href="cadastro.html">Matricular</a>
+    <a class="btn-aluno" href="login.html">Aluno</a>
+    <a class="btn-aluno" href="CadastroPersonal.html">Trabalhe conosco</a>
+  </header>
+
+  <main class="conteudo">
+    <section class="cartao-plano" aria-labelledby="titulo-pagina">
+      <p class="chamada">Sua próxima evolução começa aqui</p>
+      <h1 id="titulo-pagina">Confirme seu plano</h1>
+
+      <div id="detalhes-plano" class="detalhes-plano" hidden>
+        <h2 id="nome-plano"></h2>
+        <p class="preco"><span id="preco-plano"></span><span class="periodo"> / mês</span></p>
+        <ul id="beneficios-plano"></ul>
+        <a id="botao-matricula" class="botao-principal" href="cadastro.html">Continuar matrícula</a>
+      </div>
+
+      <div id="plano-invalido" class="plano-invalido" hidden>
+        <p>Não foi possível identificar o plano selecionado.</p>
+        <a class="botao-principal" href="index.html#pricing">Escolher um plano</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    var planos = {
+      "iron-start": {
+        nome: "Iron Start",
+        preco: "R$ 89,90",
+        beneficios: [
+          "Treinamento orientado",
+          "Acesso aos treinos iniciais",
+          "Avaliação física inicial"
+        ]
+      },
+      "iron-performance": {
+        nome: "Iron Performance",
+        preco: "R$ 219,90",
+        beneficios: [
+          "Acesso a todas as modalidades",
+          "Treino personalizado",
+          "Avaliações recorrentes"
+        ]
+      },
+      "iron-athlete": {
+        nome: "Iron Athlete",
+        preco: "R$ 149,90",
+        beneficios: [
+          "Foco em alta performance",
+          "Acompanhamento para atletas",
+          "Preparação para competições"
+        ]
+      }
+    };
+
+    var chavePlano = new URLSearchParams(window.location.search).get("plano");
+    var plano = planos[chavePlano];
+    var detalhesPlano = document.getElementById("detalhes-plano");
+    var planoInvalido = document.getElementById("plano-invalido");
+
+    if (plano) {
+      document.getElementById("nome-plano").textContent = plano.nome;
+      document.getElementById("preco-plano").textContent = plano.preco;
+      document.getElementById("botao-matricula").href =
+        "cadastro.html?plano=" + encodeURIComponent(chavePlano);
+
+      var listaBeneficios = document.getElementById("beneficios-plano");
+      plano.beneficios.forEach(function(beneficio) {
+        var item = document.createElement("li");
+        item.textContent = beneficio;
+        listaBeneficios.appendChild(item);
+      });
+
+      detalhesPlano.hidden = false;
+    } else {
+      planoInvalido.hidden = false;
+    }
+  </script>
+</body>
+
+</html>

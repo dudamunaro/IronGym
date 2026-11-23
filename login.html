@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Iron Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+</head>
+<body>
+  <header class="cabecalho-login">
+    <a href="index.html" class="marca">
+      <img src="assets/img/ironlogo.png" alt="Iron Gym">
+    </a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#modalidades">Modalidades</a>
+      <a href="index.html#team">Time</a>
+      <a href="index.html#pricing">Planos</a>
+      <a href="index.html#faq-2">FAQ</a>
+    </nav>
+    <a class="btn-getstarted" href="cadastro.html">Matricular</a>
+    <a class="btn-aluno" href="login.html">Aluno</a>
+    <a class="btn-aluno" href="CadastroPersonal.html">Trabalhe conosco</a>
+  </header>
+
+  <main class="pagina-login">
+    <section class="introducao-login">
+      <p class="chamada">Iron Gym Club</p>
+      <h2 class="titulo">Área do aluno</h2>
+      <p>Acesse sua área do aluno para acompanhar matrícula, planos e treinos.</p>
+
+      <div class="beneficios-login">
+        <article>
+          <strong>Treino</strong>
+          <span>Ficha e acompanhamento</span>
+        </article>
+        <article>
+          <strong>Planos</strong>
+          <span>Consulta rápida</span>
+        </article>
+        <article>
+          <strong>Suporte</strong>
+          <span>Atendimento ao aluno</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cartao-login">
+      <p class="chamada">Acesso do aluno</p>
+      <h2>Entrar</h2>
+
+      <p class="aviso-login">Acesso demonstrativo: este formulário não verifica nem armazena credenciais.</p>
+
+      <form id="form-login" action="#" method="post">
+        <label for="usuario">E-mail</label>
+        <input type="email" id="usuario" name="usuario" autocomplete="username" required>
+        <span id="erro-usuario" class="mensagem-login" aria-live="polite"></span>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" autocomplete="current-password" minlength="6" required>
+        <span id="erro-senha" class="mensagem-login" aria-live="polite"></span>
+
+        <div class="acoes-login">
+          <button type="submit">Entrar na demonstração</button>
+          <a href="index.html">Cancelar</a>
+        </div>
+      </form>
+
+      <a href="cadastro.html" class="link-texto">Criar cadastro</a>
+      <a href="login-profissional.html" class="link-texto link-profissional">Sou profissional? Acessar área profissional</a>
+    </section>
+  </main>
+  <script>
+    document.getElementById("form-login").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var email = document.getElementById("usuario");
+      var senha = document.getElementById("senha");
+      var erroEmail = document.getElementById("erro-usuario");
+      var erroSenha = document.getElementById("erro-senha");
+      var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim());
+
+      email.classList.remove("invalido");
+      senha.classList.remove("invalido");
+      erroEmail.textContent = "";
+      erroSenha.textContent = "";
+
+      if (!emailValido) {
+        email.classList.add("invalido");
+        erroEmail.textContent = "Informe um e-mail válido.";
+        email.focus();
+        return;
+      }
+
+      if (senha.value.length < 6) {
+        senha.classList.add("invalido");
+        erroSenha.textContent = "A senha deve ter pelo menos 6 caracteres.";
+        senha.focus();
+        return;
+      }
+
+      window.location.href = "area-aluno.html";
+    });
+  </script>
+</body>
+</html>
